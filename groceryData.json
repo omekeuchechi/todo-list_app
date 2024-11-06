@@ -1,0 +1,65 @@
+[
+    {
+        "id": "1024",
+        "name" : "Bread",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N1500"
+    },
+    {
+        "id": "1025",
+        "name" : "Carrots",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N150"
+    },
+    {
+        "id": "1026",
+        "name" : "Tomato",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N300"
+    },
+    {
+        "id": "1027",
+        "name" : "Milk",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N2500"
+    },
+    {
+        "id": "1028",
+        "name" : "Packaged Meat",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N3000"
+    },
+    {
+        "id": "1029",
+        "name" : "Pasta",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N1200"
+    },
+    {
+        "id": "1030",
+        "name" : "",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N150"
+    },
+    {
+        "id": "1031",
+        "name" : "Oat Meal",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N2500"
+    },
+    {
+        "id": "1032",
+        "name" : "Vegetable Oil",
+        "quantityInStock": 10,
+        "image" : "image url",
+        "price" : "N7000"
+    }
+]
