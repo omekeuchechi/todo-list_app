@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrollable Card Slider</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      /* styles.css */
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+      }
+
+      .slider-container {
+        width: 80%;
+        position: relative;
+        overflow: hidden;
+        margin: auto;
+      }
+
+      .card-slider {
+        display: flex;
+        transition: transform 0.3s ease;
+      }
+
+      .card {
+        min-width: 200px; /* Default width of the card */
+        height: 200px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        margin: 0 10px; /* space between cards */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Button styles */
+      button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        cursor: pointer;
+        font-size: 24px;
+        padding: 10px;
+        z-index: 10;
+      }
+
+      .prev {
+        left: 10px;
+      }
+
+      .next {
+        right: 10px;
+      }
+
+      /* Media Queries */
+      @media (max-width: 768px) {
+        .card {
+          min-width: 150px; /* Smaller cards for medium screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .card {
+          min-width: 120px; /* Even smaller cards for small screens */
+        }
+
+        .card-slider {
+          flex-wrap: nowrap; /* Keep cards in a single row */
+        }
+
+        button {
+          font-size: 18px; /* Smaller buttons on mobile */
+          padding: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="slider-container">
+      <button class="prev" onclick="scrollCards(-1)">❮</button>
+      <div class="card-slider">
+        <div class="card">Card 1</div>
+        <div class="card">Card 2</div>
+        <div class="card">Card 3</div>
+        <div class="card">Card 4</div>
+        <div class="card">Card 5</div>
+        <div class="card">Card 6</div>
+      </div>
+      <button class="next" onclick="scrollCards(1)">❯</button>
+    </div>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+      // script.js
+
+      let currentIndex = 0;
+      const cardWidth = 220; // default width of each card + margin
+      const cardsToShow = 3; // default number of cards to show in the view
+
+      function scrollCards(direction) {
+        const cardSlider = document.querySelector(".card-slider");
+        const totalCards = document.querySelectorAll(".card").length;
+
+        currentIndex += direction;
+
+        // Adjust currentIndex based on direction and total cards
+        if (currentIndex < 0) {
+          currentIndex = 0;
+        }
+
+        if (currentIndex > totalCards - cardsToShow) {
+          currentIndex = totalCards - cardsToShow;
+        }
+
+        // Update slider position
+        const offset = -currentIndex * cardWidth;
+        cardSlider.style.transform = `translateX(${offset}px)`;
+      }
+
+      // Adjust card width and number of cards to show based on window size
+      function updateCardDimensions() {
+        const cardSlider = document.querySelector(".card-slider");
+        const totalCards = document.querySelectorAll(".card").length;
+
+        let cardCount = 3; // Default cards to show
+
+        if (window.innerWidth <= 768) {
+          cardCount = 2;
+          cardWidth = 160; // Adjust for smaller breakpoint
+        }
+
+        if (window.innerWidth <= 480) {
+          cardCount = 1;
+          cardWidth = 130; // Adjust for mobile
+        }
+
+        // Update the number of cards to show
+        currentIndex = Math.min(currentIndex, totalCards - cardCount);
+        const offset = -currentIndex * cardWidth; // Update the offset
+        cardSlider.style.transform = `translateX(${offset}px)`; // Apply the new offset
+      }
+
+      // Update on load and resize
+      window.addEventListener("resize", updateCardDimensions);
+      window.addEventListener("DOMContentLoaded", updateCardDimensions);
+    </script>
+  </body>
+</html>

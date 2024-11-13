@@ -3,7 +3,7 @@
         "id": "1024",
         "name" : "Bread",
         "quantityInStock": 10,
-        "image" : "image url",
+        "image" : "",
         "price" : "N1500"
     },
     {
