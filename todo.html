@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/app.css">
+    <!-- <link rel="stylesheet" href="assets/css/app.css"> -->
+     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-
-    <h1>Grocery Todo List</h1>
+  <h1>Grocery Todo List</h1>
+  <div class="container">
     <ul class="todo-list" id="todo-list"></ul>
+  </div>
 
+  <details>
+    <summary>
+      Products Details
+    </summary>
+    <table>
+      <thead>
+      <tr>
+        <th><i class="fa fa-key" aria-hidden="true"></i> id</th>
+        <th><i class="fas fa-cart-plus"></i> Product name</th>
+        <th><i class="fa-brands fa-buffer"></i> quantityInStock</th>
+        <th><i class="fa-solid fa-coins"></i> price</th>
+      </tr>
+      </thead>
+      <tbody id="data-output">
 
+      </tbody>
+    </table>
+  </details>
     <div class="cart">
         <p id="cart-counter">0</p>
         <button id="clear-cart" type="button">Clear Cart</button>
@@ -30,6 +49,7 @@
 
 
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/migeration.js"></script>
     <script src="assets/fontawesome-free-6.5.2-web/js/all.js"></script>
 
     <!-- <script>

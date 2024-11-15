@@ -10,7 +10,7 @@ const todoInput = document.getElementById('todo-input');
                 const li = document.createElement('li');
                 li.textContent = todo.text;
                 li.className = todo.completed ? 'completed' : '';
-                
+
                 // Toggle completion on click
                 li.onclick = () => {
                     todo.completed = !todo.completed;
@@ -26,7 +26,7 @@ const todoInput = document.getElementById('todo-input');
                     saveTodos();
                     renderTodos();
                 };
-                
+
                 li.appendChild(deleteButton);
                 todoList.appendChild(li);
             });
