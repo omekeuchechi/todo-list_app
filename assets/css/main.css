@@ -92,6 +92,16 @@ td {
   display: none;
 }
 
+.todo-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
 #cart-list {
   list-style: none;
   padding: 0;
@@ -122,4 +132,19 @@ td {
 
 #error-message {
   background-color: #f44336;
+}
+.product-details-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.product-detail {
+  margin-bottom: 10px;
 }

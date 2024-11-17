@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-1bb7ef9/tailwind.min.css" integrity="sha512-MBfgY+wsnYTTlvt8QX5CF3dvkJSJrYe2v+9b4JTP89o/NIREqQMtbZ48n7Fg8kIcnWxIumkppB07N08aHnCAOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
 
         /* div{
@@ -27,8 +28,10 @@
 
      ul{
         display: inline-flex;
+        position: relative;
         gap: 30px;
         list-style: none;
+        flex-direction: row;
      }
      ul li a{
         color: orange;
@@ -42,16 +45,33 @@
         cursor: pointer;
      }
 
+     .fa-bars{
+        display: none;
+     }
+
      @media (max-width: 500px) {
-        nav{
+        /* nav{
             flex-direction: column;
-        }
+        } */
         ul{
             /* display: block; */
             flex-direction: column;
-            /* display: none; */
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            width: 100%;
+            line-height: 70px;
+            text-align: center;
+            background: #000;
+            padding: 20px 20px;
+            color: aliceblue;
+            align-items: center;
         }
         .hide{
+            display: block;
+        }
+        .fa-bars{
             display: block;
             cursor: pointer;
         }
@@ -64,24 +84,28 @@
 <body>
  <nav>
     <h1>logo</h1>
-    <div class="hide" onclick="hide()">hide</div>
+    <!-- <div class="hide" onclick="hide()">hide</div> -->
+     <i class="fas fa-bars" onclick="hide()"></i>
     <ul id="ul">
         <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
-        <li><a href="#">home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Explore</a></li>
     </ul>
 </nav>
+
+<p class="py-15 text-center">home page</p>
 
     <!-- <button type="button" id="btn">send</button>
     <div id="div">hide</div> -->
 
 
     <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/fontawesome-free-6.5.2-web/js/all.js"></script>
 
     <script>
         function hide() {
-            $('#ul').toggle();
+            $('#ul').toggle('easeIn');
         }
     </script>
 </body>

@@ -39,6 +39,8 @@
   .then(response => response.json())
   .then(data => {
     const todoList = document.getElementById('todo-list');
+    const displayedProducts = new Set();
+
     // const tr = document.getElementById('tr');
 
     // Loop through the grocery items and create list items
@@ -78,20 +80,27 @@
       const img = document.createElement('img');
       img.src = item.image;
       img.alt = item.name;
+      img.setAttribute('id', `img-btn-${item.id}`); 
 
       img.addEventListener('click', () => {
         const buy = document.getElementById('cart-items');
 
         buy.style.display = 'block';
+        
       })
-
 
       // Add click event listener to the image
       img.addEventListener('click', () => {
         // Add the grocery item to the cart
         addToCart(item);
+        if (!displayedProducts.has(item.id)) {
+          displayedProducts.add(item.id);
+          displayProductDetails(item);
+        }
+        
+        
       });
-
+      
       li.appendChild(img);
       todoList.appendChild(li);
       // todoList.appendChild(label);
@@ -101,18 +110,33 @@
   .catch(error => {
     console.error('Error:', error);
   });
+  
 
-// Function to add grocery item to the cart
-function addToCart(item) {
-  // Update the cart counter
-  const cartCounter = document.getElementById('cart-counter');
-  cartCounter.textContent = parseInt(cartCounter.textContent) - 1;
+  // Function to display product details
+function displayProductDetails(item) {
+  const productDetails = document.getElementById('product-details');
+  const details = document.createElement('div');
+  details.classList.add('product-detail');
+  details.innerHTML = `
+    <h3>${item.name}</h3>
+    <p>Price: $${item.price}</p>
+    <p>Quantity in Stock: ${item.quantityInStock}</p>
+  `;
+  // document.body.appendChild(item);
+  productDetails.appendChild(details);
+}
 
-  // Add the item to the cart list
-  const cartList = document.getElementById('cart-list');
-  const li = document.createElement('li');
-  li.textContent = item.name;
-  cartList.appendChild(li);
+  // Function to add grocery item to the cart
+  function addToCart(item) {
+    // Update the cart counter
+    const cartCounter = document.getElementById('cart-counter');
+    cartCounter.textContent = parseInt(cartCounter.textContent) - 1;
+    
+    // Add the item to the cart list
+    const cartList = document.getElementById('cart-list');
+    const li = document.createElement('li');
+    li.textContent = item.name;
+    cartList.appendChild(li);
 
   // Update the total price
   const totalPrice = document.getElementById('total-price');

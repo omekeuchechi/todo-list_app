@@ -24,6 +24,7 @@
         <th><i class="fas fa-cart-plus"></i> Product name</th>
         <th><i class="fa-brands fa-buffer"></i> quantityInStock</th>
         <th><i class="fa-solid fa-coins"></i> price</th>
+        <th><i class="fa-solid fa-camera"></i> price</th>
       </tr>
       </thead>
       <tbody id="data-output">
@@ -35,6 +36,10 @@
         <p id="cart-counter">0</p>
         <button id="clear-cart" type="button">Clear Cart</button>
         <button id="checkout" type="button">Checkout</button>
+        <div class="display">
+          <div id="display-cart"></div>
+          <div id="price"></div>
+        </div>
     </div>
 
     <div id="cart-items">
@@ -42,6 +47,10 @@
         <ul id="cart-list"></ul>
         <p id="total-price">$0.00</p>
         <button id="remove-item" type="button">buy</button>
+    </div>
+
+    <div class="item-count">
+      
     </div>
     <div id="success-message">Added</div>
     <div id="error-message">Not Added due to Bugs</div>

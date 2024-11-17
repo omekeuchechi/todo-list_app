@@ -2,22 +2,44 @@ const http = require('http');
 const path = require('path');
 const fs = require('fs');
 
-const server = http.createServer((req, res) =>{
-    const filePath = path.join(__dirname, 'index.html');
+const serverStaticFiles = (filePath, res) =>{
+    let contentType = "";
+    const extName = path.extname(filePath);
+
+    switch (extName) {
+        case ".html":
+            contentType = "text/html";
+            break;
+        case ".js":
+            contentType = "application/javascript";
+            break;
+        case ".css":
+            contentType = "text/css";
+            break;
+        case ".jpg":
+        case ".jpeg":
+            contentType = "image/jpg";
+            break;
+        case ".png":
+            contentType = "image/png";
+            break;
+        default:
+            contentType = "text/plain";
+    }
 
     fs.readFile(filePath, (err, data) => {
-       if (err) {
-             res.statusCode = 500;
-             res.setHeader('Content-Type', 'plain/text');
-             res.end("Internal Server Error")
-         }
+        if (err) {
+            res
+        }
+    })
 
-         res.statusCode= 200;
-         res.setHeader('Content-Type', 'text/html');
-         res.end(data);
-        });
-});
+}
+
+const server = http.createServer((req, res) =>{
+    // checking for the browser request
+    // console.log();
+})
 
 server.listen(3000, () => {
-    console.log('server listening on port');
-});
+    console.log('listening on port 3000');
+})
