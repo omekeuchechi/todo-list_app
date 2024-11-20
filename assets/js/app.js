@@ -96,6 +96,7 @@
         if (!displayedProducts.has(item.id)) {
           displayedProducts.add(item.id);
           displayProductDetails(item);
+          // alert(`Product: ${item.name}\nPrice: $${item.price}`);
         }
         
         
@@ -111,9 +112,19 @@
     console.error('Error:', error);
   });
   
+let count = 0;
+let productsId = 0;
+function updateCartDetails(item, img) {
+  count++;
+  img.onclick = () => {
+    if (!productsId === item.id) {
+      console.log('working');
+    }
+  }
+}
 
   // Function to display product details
-function displayProductDetails(item) {
+  function displayProductDetails(item) {
   const productDetails = document.getElementById('product-details');
   const details = document.createElement('div');
   details.classList.add('product-detail');
@@ -141,7 +152,8 @@ function displayProductDetails(item) {
   // Update the total price
   const totalPrice = document.getElementById('total-price');
   const currentPrice = parseFloat(totalPrice.textContent.slice(1));
-  totalPrice.textContent = `$${(currentPrice + item.price).toFixed(2)}`;
+  // const fixed = toFixed(2);
+  // totalPrice.textContent = `$${(currentPrice + item.price).fixed}`;
 }
 
 // Add event listener to the clear cart button

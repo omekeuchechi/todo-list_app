@@ -3,63 +3,63 @@
         "id": "1024",
         "name" : "Bread",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 232749.png",
+        "image" : "img/download (10).jpeg",
         "price" : "N1500"
     },
     {
         "id": "1025",
         "name" : "Carrots",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 232906.png",
+        "image" : "img/carrot.jpeg",
         "price" : "N150"
     },
     {
         "id": "1026",
         "name" : "Tomato",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233002.png",
+        "image" : "img/download (14).jpeg",
         "price" : "N300"
     },
     {
         "id": "1027",
         "name" : "Milk",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233148.png",
+        "image" : "img/download (13).jpeg",
         "price" : "N2500"
     },
     {
         "id": "1028",
         "name" : "Packaged Meat",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233337.png",
+        "image" : "img/download (12).jpeg",
         "price" : "N3000"
     },
     {
         "id": "1029",
         "name" : "Pasta",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233505.png",
+        "image" : "img/download (17).jpeg",
         "price" : "N1200"
     },
     {
         "id": "1030",
         "name" : "Delta Bread",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233719.png",
+        "image" : "img/download (11).jpeg",
         "price" : "N150"
     },
     {
         "id": "1031",
         "name" : "Oat Meal",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-09-12 233815.png",
+        "image" : "img/download (16).jpeg",
         "price" : "N2500"
     },
     {
         "id": "1032",
         "name" : "Vegetable Oil",
         "quantityInStock": 10,
-        "image" : "img/Screenshot 2024-10-24 235908.png",
+        "image" : "img/download (15).jpeg",
         "price" : "N7000"
     }
 ]
