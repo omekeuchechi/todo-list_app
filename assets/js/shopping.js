@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         cartItem.innerHTML = `//+
                             <span class="item-details">${item.name} - $${itemPrice.toFixed(2)} (x1)</span>//+
                             <button class="remove-item">Remove</button>//+
-                        `;//+
+                        `;
                         cart.appendChild(cartItem);  
                         cartItems[itemId] = { count: 1, li: cartItem };  
                     }  
@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     totalDisplay.textContent = total.toFixed(2);  
                     buyButton.style.display = "block"; 
                 });
-// {"source":"chat"}
             });  
         })  
         .catch(error => {  
@@ -79,5 +78,27 @@ document.addEventListener("DOMContentLoaded", () => {
         total = 0;  
         totalDisplay.textContent = total.toFixed(2);  
         buyButton.style.display = "none";
-    });  
-});
+    });
+
+     const feedbackInput = document.getElementById('feedback');//+
+     const feedbackButton = document.getElementById('submit-btn');//+
+     const feedbackOutput = document.getElementById('feedback-text');//+
+
+     feedbackButton.addEventListener('click', () => {//+
+         const feedbackValue = feedbackInput.value.trim();//+
+//+
+         if (feedbackValue === '') {//+
+             feedbackOutput.textContent = 'Please enter your feedback.';//+
+         } else {//+
+             feedbackOutput.textContent = `Thank you for your feedback: ${feedbackValue}`;//+
+             feedbackInput.value = ''; // Clear the input field after submission//+
+         }//+
+     });//+
+//+
+     // Add event listener for the Enter key//+
+     feedbackInput.addEventListener('keypress', (e) => {//+
+         if (e.key === 'Enter') {//+
+             feedbackButton.click(); // Trigger the click event on the button//+
+         }//+
+     });//+
+ });
