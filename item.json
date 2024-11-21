@@ -1,0 +1,20 @@
+[  
+    {  
+        "id": 1,  
+        "name": "Bread",  
+        "price": 10,  
+        "image": "img/download (11).jpeg"  
+    },  
+    {  
+        "id": 2,  
+        "name": "Carrot",  
+        "price": 20,  
+        "image": "img/carrot.jpeg"  
+    },  
+    {  
+        "id": 3,  
+        "name": "Vegetable Oil",  
+        "price": 30,  
+        "image": "img/download (15).jpeg"  
+    }  
+]

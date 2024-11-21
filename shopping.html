@@ -1,0 +1,36 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Shopping Cart with JSON</title>  
+    <link rel="stylesheet" href="/assets/css/shopping.css">  
+</head>  
+<body>  
+    <div class="container">  
+        <h1>Shopping Cart</h1>  
+        <div id="items-container"></div>  
+        
+        <h2>Your Cart</h2>  
+        <ul id="cart"></ul>  
+        <h3>Total: $<span id="total">0</span></h3>  
+        <button id="buy-button" style="display:none;">Buy</button>
+
+                <!-- New Section for Offers -->
+                <h2>Special Offers</h2>
+                <div id="offers-container">
+                    <p>Get 20% off on your first purchase!</p>
+                    <p>Free shipping on orders over $50.</p>
+                </div>
+        
+                <!-- New Section for User Feedback -->
+                <h2>Feedback</h2>
+                <form id="feedback-form">
+                    <label for="feedback">Your Feedback:</label><br>
+                    <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+                    <button type="submit">Submit Feedback</button>
+                </form>
+    </div>  
+    <script src="/assets/js/shopping.js"></script>  
+</body>  
+</html>

@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+#items-container, #cart, #offers-container {
+    margin-bottom: 20px;
+}
+
+#cart {
+    list-style-type: none;
+    padding: 0;
+}
+
+#cart li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#total {
+    font-weight: bold;
+}
+
+#buy-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    display: block;
+    margin-top: 10px;
+}
+
+#buy-button:hover {
+    background-color: #218838;
+}
+
+#offers-container {
+    background-color: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#feedback-form {
+    margin-top: 20px;
+}
+
+#feedback-form label {
+    font-weight: bold;
+}
+
+#feedback-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#feedback-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#feedback-form button:hover {
+    background-color: #0056b3;
+}

@@ -89,13 +89,15 @@
         
       })
 
+      let productsId = 0;
       // Add click event listener to the image
       img.addEventListener('click', () => {
         // Add the grocery item to the cart
         addToCart(item);
-        if (!displayedProducts.has(item.id)) {
+        if (!displayedProducts.has(item.id) || !productsId === item.id) {
           displayedProducts.add(item.id);
           displayProductDetails(item);
+          // updateCartDetails(item, img);
           // alert(`Product: ${item.name}\nPrice: $${item.price}`);
         }
         
@@ -112,8 +114,6 @@
     console.error('Error:', error);
   });
   
-let count = 0;
-let productsId = 0;
 function updateCartDetails(item, img) {
   count++;
   img.onclick = () => {
@@ -198,5 +198,14 @@ document.getElementById('remove-item').addEventListener('click', () => {
   }
 });
 
+function eArabic(x) {
+  return x.toLocaleString('ar-EG');
+}
+
+const see = eArabic(123456.789);
+console.log(see);
+
+const number = 200004;
+console.log(number.toLocaleString("en-IN"));
 // // Send the request
 // xhr.send();
